@@ -1,0 +1,14 @@
+# See http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+logging:
+  level:
+    root: info
+
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
