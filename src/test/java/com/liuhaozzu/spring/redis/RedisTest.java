@@ -27,7 +27,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class RedisTest {
 
     @Resource
-    private RedisTemplate redisTemplate;
+    private RedisTemplate<String, String> redisTemplate;
+
+
 
 
 
@@ -59,29 +61,11 @@ public class RedisTest {
         Set<String> set = redisTemplate.opsForSet().members("abc");
 
         System.out.println(set);
-        boolean r = redisTemplate.opsForSet().isMember("abc", "572");
+        Boolean r = redisTemplate.opsForSet().isMember("abc", "572");
         System.out.println(r);
 
     }
 
-    @Test
-    public void test() throws ExecutionException, InterruptedException {
-        ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 1, 1, TimeUnit.MINUTES, new LinkedBlockingDeque<>(1), new ThreadPoolExecutor.DiscardPolicy());
-        final AtomicInteger count = new AtomicInteger(0);
-        List<Future<String>> list = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            Future<String> future = executor.submit(new Callable<String>() {
-                @Override
-                public String call() throws Exception {
-                    Thread.sleep(100);
-                    return String.valueOf(count.getAndIncrement());
-                }
 
-            });
-            list.add(future);
-        }
-        for (Future<String> future : list) {
-            System.out.println(future.get());
-        }
-    }
+
 }

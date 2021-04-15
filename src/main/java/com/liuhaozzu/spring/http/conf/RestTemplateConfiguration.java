@@ -53,17 +53,5 @@ public class RestTemplateConfiguration {
         return factory;
     }
 
-    @Bean
-    //@ConditionalOnMissingBean(RestTemplate.class)
-    @Primary
-    @Order(Ordered.HIGHEST_PRECEDENCE)
-    public RestTemplate getRestTemplate() {
-        RestTemplate restTemplate = new RestTemplate(this.createFactory());
-        List<HttpMessageConverter<?>> converterList = restTemplate.getMessageConverters();
-        converterList.removeIf(item->item.getClass() == StringHttpMessageConverter.class);
-        converterList.add(new StringHttpMessageConverter(StandardCharsets.UTF_8));
-        converterList.add(new GsonHttpMessageConverter());
-        System.out.println(System.identityHashCode(restTemplate));
-        return restTemplate;
-    }
+
 }
