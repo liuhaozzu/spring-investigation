@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
 public class ProxyCustomizer implements RestTemplateCustomizer {
     @Override
     public void customize(RestTemplate restTemplate) {
-        HttpHost proxy = new HttpHost("app.zhuanzhuan.com");
+        HttpHost proxy = new HttpHost("baidu.com");
         HttpClient httpClient = HttpClientBuilder.create().setRoutePlanner(new DefaultProxyRoutePlanner(proxy) {
 
             @Override

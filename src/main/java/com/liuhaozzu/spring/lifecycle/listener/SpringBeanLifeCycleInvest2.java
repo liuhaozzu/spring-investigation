@@ -27,7 +27,7 @@ public class SpringBeanLifeCycleInvest2 implements ApplicationListener<Applicati
         System.out.println(System.identityHashCode(restTemplate));
 
             try {
-                ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://app.zhuanzhuan.com/zzgift/getfeedlistv2", String.class);
+                ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://www.baidu.com", String.class);
                 System.out.println(responseEntity);
                 System.out.println(responseEntity.getStatusCode());
                 System.out.println(responseEntity.getStatusCode().is2xxSuccessful());
