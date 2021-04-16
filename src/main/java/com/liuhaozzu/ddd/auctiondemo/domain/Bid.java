@@ -5,4 +5,7 @@ package com.liuhaozzu.ddd.auctiondemo.domain;
  * @date 4/16/21 7:34 PM
  */
 public class Bid {
+    public Bid determineWinningBidIncrement(Bid bid) {
+        return bid;
+    }
 }

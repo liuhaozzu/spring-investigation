@@ -16,8 +16,13 @@ public class Auction {
                 placeABidForTheFirst(bid);
             } else if (bidderIsIncreasingMaximumBid(bid)) {
                 winningBid = winningBid.raiseMaximumBidTo(bid.MaximumBid);
+            } else if (winningBid.canBeExceededBy(bid.MaximumBid)) {
+                place(winningBid.determineWinningBidIncrement(bid));
             }
         }
+    }
+
+    private void place(Bid determineWinningBidIncrement) {
     }
 
 
