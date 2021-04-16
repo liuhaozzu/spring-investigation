@@ -6,7 +6,7 @@ package com.liuhaozzu.ddd.domain;
  */
 public class OperationMessages {
     public static final String NO_OPERATION_LOG = "无操作日志";
-    public static final Object INVALID_STAGE = "无效stage";
+    public static final String INVALID_STAGE = "无效stage";
     static final String NO_ACTION_TYPE = "无动作类型";
     static final String NO_OPERATOR_NAME_TYPE = "无操作名称";
     static final String NO_MODULE_INFO = "没有模块信息";
