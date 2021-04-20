@@ -11,15 +11,7 @@ public class Auction {
     private Bid winningBid;
 
     public void placeBidFor(Bid bid, LocalDateTime currentTime) {
-        if (stillInProcess(currentTime)) {
-            if (firstOffer()) {
-                placeABidForTheFirst(bid);
-            } else if (bidderIsIncreasingMaximumBid(bid)) {
-                winningBid = winningBid.raiseMaximumBidTo(bid.MaximumBid);
-            } else if (winningBid.canBeExceededBy(bid.MaximumBid)) {
-                place(winningBid.determineWinningBidIncrement(bid));
-            }
-        }
+
     }
 
     private void place(Bid determineWinningBidIncrement) {
