@@ -19,8 +19,9 @@ public class EventTest {
     private EventDemoPublisher eventDemoPublisher;
 
     @Test
-    public void eventTest() {
+    public void eventTest() throws InterruptedException {
         eventDemoPublisher.publish("hello event");
+        Thread.sleep(2000);
 
     }
 }

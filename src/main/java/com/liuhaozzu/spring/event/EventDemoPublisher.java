@@ -16,6 +16,8 @@ public class EventDemoPublisher {
 
     public void publish(String msg){
         EventDemo event = new EventDemo(this, msg);
+        System.out.println("publish start:" + System.currentTimeMillis());
         eventPublisher.publishEvent(event);
+        System.out.println("publish success:" + System.currentTimeMillis());
     }
 }

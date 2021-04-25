@@ -9,18 +9,17 @@ import org.springframework.stereotype.Component;
  * @date 2021/04/20 23:23:14
  */
 @Component
-public class EventDemoListener implements ApplicationListener<EventDemo> {
+public class EventDemoListener2 implements ApplicationListener<EventDemo> {
 
-    @Async
     @Override
     public void onApplicationEvent(EventDemo eventDemo) {
-        System.out.println("received:" + System.currentTimeMillis());
+        System.out.println("received2:" + System.currentTimeMillis());
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("received:" + eventDemo);
-        System.out.println("handledSuccess:" + System.currentTimeMillis());
+        System.out.println("received2:" + eventDemo);
+        System.out.println("handledSuccess2:" + System.currentTimeMillis());
     }
 }

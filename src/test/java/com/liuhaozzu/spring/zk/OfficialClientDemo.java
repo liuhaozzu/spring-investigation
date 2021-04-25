@@ -1,14 +1,8 @@
-package com.liuhaozzu.zk;
+package com.liuhaozzu.spring.zk;
 
-import com.google.common.collect.Lists;
-import org.apache.zookeeper.CreateMode;
-import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.ZooKeeper;
-import org.apache.zookeeper.data.ACL;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.nio.charset.StandardCharsets;
 
 /**
  * @author liuhao01

@@ -1,4 +1,4 @@
-package com.liuhaozzu.reactor;
+package com.liuhaozzu.spring.reactor;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.junit.Test;
